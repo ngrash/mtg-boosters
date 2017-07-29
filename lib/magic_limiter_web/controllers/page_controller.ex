@@ -8,7 +8,7 @@ defmodule MagicLimiterWeb.PageController do
   end
 
   def create(conn, %{"pool_params" => pool_params}) do
-    case CardListParser.parse(pool_params["card_list"]) do
+    case CardListParser.parse(String.trim(pool_params["card_list"])) do
       {:ok, pool} ->
         render conn, "pool.html", cards: pool
       {:error, :pool_empty} ->
