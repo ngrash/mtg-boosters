@@ -1,0 +1,7 @@
+<ul>
+  <%= for card <- @cards do %>
+    <li>
+      <%= elem(card, 0) %> (<%= elem(card, 1) %>)
+    </li>
+  <% end %>
+</ul>
