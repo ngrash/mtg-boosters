@@ -33,7 +33,7 @@ defmodule MagicLimiterWeb.PageController do
         render conn, "pool.html", cards: find_cards(pool), boosters: boosters
       {:error, :pool_empty} ->
         conn
-        |> put_flash(:error, "Please enter a pool below")
+        |> put_flash(:error, "Please enter your pool below")
         |> redirect(to: page_path(conn, :index))
     end
   end

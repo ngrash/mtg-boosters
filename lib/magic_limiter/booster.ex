@@ -74,6 +74,7 @@ defmodule MagicLimiter.Booster do
         "Uncommon"    -> {c, u + 1, r, m}
         "Rare"        -> {c, u, r + 1, m}
         "Mythic Rare" -> {c, u, r, m + 1}
+        _unknown_type -> {c, u, r, m}
       end
     end)
   end
@@ -85,6 +86,7 @@ defmodule MagicLimiter.Booster do
         "Uncommon"    -> {c, u ++ [card], r, m}
         "Rare"        -> {c, u, r ++ [card], m}
         "Mythic Rare" -> {c, u, r, m ++ [card]}
+        _unknown_type -> {c, u, r, m}
       end
     end)
   end

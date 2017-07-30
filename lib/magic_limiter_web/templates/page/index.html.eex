@@ -1,5 +1,12 @@
 <%= form_for @conn, page_path(@conn, :index), [as: :pool_params], fn form -> %>
+  <%= label(form, :card_list, "Your card pool") %>
+  <br />
   <%= textarea(form, :card_list) %>
-  <%= number_input(form, :number_of_boosters) %>
+  <br />
+  <%= label(form, :number_of_boosters, "Number of boosters") %>
+  <br />
+  <%= number_input(form, :number_of_boosters, min: "1", value: "6") %>
+  <br />
+  <br />
   <%= submit "Say go!" %>
 <% end %>
