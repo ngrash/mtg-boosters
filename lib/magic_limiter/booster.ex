@@ -1,9 +1,24 @@
 defmodule MagicLimiter.Booster do
+  @commons_in_booster 10
+  @uncommons_in_booster 3
+  @rares_in_booster 1
+
   def build(pool, count) do
     pool
     |> denormalize
     |> order_by_rarity
     |> pack(count)
+  end
+
+  def max_possible_boosters({c, u, r, m}) do
+    [boosters_possible(c, @commons_in_booster),
+     boosters_possible(u, @uncommons_in_booster),
+     boosters_possible(r + m, @rares_in_booster)]
+    |> Enum.min(fn -> 0 end)
+  end
+
+  def boosters_possible(cards_available, cards_needed_per_booster) do
+    Integer.floor_div(cards_available, cards_needed_per_booster)
   end
 
   defp denormalize(pool) do
@@ -23,8 +38,8 @@ defmodule MagicLimiter.Booster do
     # c = commons
     # cb = commons in booster
     # cr = commons remaining (in pool)
-    {cb, cr} = pop_random(c, 10)
-    {ub, ur} = pop_random(u, 3)
+    {cb, cr} = pop_random(c, @commons_in_booster)
+    {ub, ur} = pop_random(u, @uncommons_in_booster)
     {rb, rr, mr} = pick_rare(r, m)
     {cb ++ ub ++ rb, {cr, ur, rr, mr}}
   end
@@ -48,6 +63,20 @@ defmodule MagicLimiter.Booster do
 
   defp pop(list, 0), do: list
   defp pop([_ | rest], n), do: pop(rest, n - 1)
+
+  def count_rarity(pool) do
+    pool
+    |> denormalize
+    |> Enum.reduce({0, 0, 0, 0}, fn card, {c, u, r, m} ->
+      IO.inspect(card)
+      case card.rarity do
+        "Common"      -> {c + 1, u, r, m}
+        "Uncommon"    -> {c, u + 1, r, m}
+        "Rare"        -> {c, u, r + 1, m}
+        "Mythic Rare" -> {c, u, r, m + 1}
+      end
+    end)
+  end
 
   defp order_by_rarity(pool) do
     Enum.reduce(pool, {[], [], [], []}, fn card, {c, u, r, m} ->

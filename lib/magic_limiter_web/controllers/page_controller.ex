@@ -16,7 +16,19 @@ defmodule MagicLimiterWeb.PageController do
           |> Enum.filter(fn {status, _, _} -> status == :ok end)
           |> Enum.map(fn {_, card, count} -> {card, count} end)
 
-        boosters = Booster.build(known_cards, String.to_integer(pool_params["number_of_boosters"]))
+        desired_booster_count = String.to_integer(pool_params["number_of_boosters"])
+        cards_by_rarity = Booster.count_rarity(known_cards)
+        max_possible_boosters = Booster.max_possible_boosters(cards_by_rarity)
+
+        count = case max_possible_boosters > desired_booster_count do
+          true  -> desired_booster_count
+          false ->
+
+            conn = put_flash(conn, :warning, "You asked for #{desired_booster_count} boosters but you card pool only allows for #{max_possible_boosters}")
+            max_possible_boosters
+        end
+
+        boosters = Booster.build(known_cards, count)
 
         render conn, "pool.html", cards: find_cards(pool), boosters: boosters
       {:error, :pool_empty} ->
