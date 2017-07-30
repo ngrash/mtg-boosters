@@ -1,7 +1,18 @@
 <ul>
   <%= for card <- @cards do %>
     <li>
-      <%= elem(card, 0) %> (<%= elem(card, 1) %>)
+      <%= render_card(card) %>
     </li>
   <% end %>
 </ul>
+
+<%= for booster <- @boosters do %>
+  <hr/>
+  <ul>
+    <%= for card <- booster do %>
+      <li>
+        <%= render_card(card) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
