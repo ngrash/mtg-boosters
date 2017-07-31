@@ -1,12 +1,3 @@
-<h2>Your pool</h2>
-<ul>
-  <%= for card <- @cards do %>
-    <li>
-      <%= render_card(card) %>
-    </li>
-  <% end %>
-</ul>
-
 <h2>Your boosters</h2>
 <%= for booster <- @boosters do %>
   <hr/>
@@ -18,3 +9,13 @@
     <% end %>
   </ul>
 <% end %>
+
+<h2>Your pool</h2>
+<ul>
+  <%= for card <- @cards do %>
+    <li>
+      <%= render_card(card) %>
+    </li>
+  <% end %>
+</ul>
+
