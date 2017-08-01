@@ -24,7 +24,7 @@
       </div>
     </div>
   <% end %>
-<%= else %>
+<% else %>
   <p>
     <div class="alert alert-danger">
       Could not generate boosters. Please add more cards to your pool and try again.
