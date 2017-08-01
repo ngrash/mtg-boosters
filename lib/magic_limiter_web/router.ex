@@ -18,6 +18,7 @@ defmodule MagicLimiterWeb.Router do
 
     get "/", PageController, :index
     post "/", PageController, :create
+    get "/faq", PageController, :faq
   end
 
   # Other scopes may use custom stacks.

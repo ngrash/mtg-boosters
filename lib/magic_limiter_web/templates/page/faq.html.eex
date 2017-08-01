@@ -1,0 +1,58 @@
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is this?</h3>
+The <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> generates a number of booster for limited formats, such as:
+
+<ul>
+  <li><a href="http://magic.wizards.com/en/game-info/gameplay/formats/sealed-deck">Sealed</a></li>
+  <li><a href="http://magic.wizards.com/en/game-info/gameplay/formats/booster-draft">Booster Draft</a></li>
+  <li><a href="http://magic.wizards.com/en/articles/archive/how-build/building-your-first-cube-2016-05-19">Cube Draft</a></li>
+</ul>
+
+<h3>Where is the generator?</h3>
+
+It is <a href="<%= page_path(@conn, :index) %>">right here</a>.
+
+<h3>Do you expect me to type in all my cards by hand?</h3>
+
+No. <a href="https://deckbox.org">Deckbox</a> offers an <i>Export to Text</i> feature that produces compatible lists.
+
+There are also mobile apps such as <a href="https://itunes.apple.com/de/app/scryglass-magic-card-scanner/id1139485613">ScryGlass (for iOS)</a> that you can use to catalogue your cards.
+
+<h3>Why did you build this?</h3>
+
+Limited formats are fun. However, I don't want to buy a fresh pack of boosters everytime I want to draft with my friends. <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> offers a way to build boosters from the cards I already own.
+
+<h3>How does it work?</h3>
+
+The generator checks the rarity of each of your cards. It then takes 14 random cards for each booster. Each booster contains 10 commons, 3 uncommons and 1 rare (replaced by a mythic in about 1 in 8 boosters if available).
+<br />
+
+Rarity is determined by looking up the card name (english only) in a database based on <a href="https://mtgjson.com">MTG JSON</a>.
+
+<h3>Can I contact you?</h3>
+Of course! If you love or hate what I do or have something else to say, you can
+<script type="text/javascript" language="javascript">
+<!--
+// Email obfuscator script 2.1 by Tim Williams, University of Arizona
+// Random encryption key feature coded by Andrew Moulden
+// This code is freeware provided these four comment lines remain intact
+// A wizard to generate this code is at http://www.jottings.com/obfuscator/
+{ coded = "oeUs@NU4DPMeByDFF.uV"
+  key = "to8POGUJBVzMpn7wCyHdIDWZ93xbvAlacNEXfQSuTjqmkg12i6se4rY0FLKhR5"
+  shift=coded.length
+  link=""
+  for (i=0; i<coded.length; i++) {
+    if (key.indexOf(coded.charAt(i))==-1) {
+      ltr = coded.charAt(i)
+      link += (ltr)
+    }
+    else {
+      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+      link += (key.charAt(ltr))
+    }
+  }
+  document.write("<a href='mailto:"+link+"' class='fa-envelope-o'>drop me an email</a>")
+}
+//-->
+</script><noscript>Sorry, you need Javascript on to email me.</noscript>.

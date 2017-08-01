@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello MagicLimiter!</title>
+    <title>Limited Booster Generator for Magic the Gathering</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -16,12 +16,13 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="/">Home</a></li>
+            <li><a href="<%= page_path(@conn, :index) %>">Home</a></li>
+            <li><a href="<%= page_path(@conn, :faq) %>">FAQ</a></li>
           </ul>
         </nav>
         <span class="logo"></span>
 
-        <h1>Limited pool generator</h1>
+        <h1>Limited Booster Generator</h1>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
