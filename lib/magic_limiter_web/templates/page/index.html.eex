@@ -4,7 +4,7 @@ Questions? <a href="<%= page_path(@conn, :faq) %>">Answers!</a>
   <div class="form-group">
     <%= label(form, :card_list, "Your card pool") %>
     <%= textarea(form, :card_list, [{:"aria-describedby", "card_list_help"}, class: "form-control", autofocus: true, rows: 5]) %>
-    <span id="card_list_help" class="help-block">Enter one card per line (englisch names only). You can write the count in front of it, i.e. "10 Fireball".</span>
+    <span id="card_list_help" class="help-block"><a href="javascript:getText()">Load an example</a> or enter one card per line (english names only). You can also add a count, i.e. "10 Fireball".</span>
   </div>
   <div class="form-group">
     <%= label(form, :number_of_boosters, "Number of boosters") %>
@@ -13,3 +13,20 @@ Questions? <a href="<%= page_path(@conn, :faq) %>">Answers!</a>
   </div>
   <%= submit "Say go!", class: "btn btn-primary" %>
 <% end %>
+
+<script>
+  function getText(){
+    // read text from URL location
+    var request = new XMLHttpRequest();
+    request.open('GET', 'examplelist.txt', true);
+    request.send(null);
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var type = request.getResponseHeader('Content-Type');
+            if (type.indexOf("text") !== 1) {
+                document.getElementById("pool_params_card_list").value = request.responseText;
+            }
+        }
+    }
+}
+</script>
