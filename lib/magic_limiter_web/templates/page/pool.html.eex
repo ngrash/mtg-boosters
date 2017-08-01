@@ -1,27 +1,38 @@
 <h2>Your boosters</h2>
-<%= for {booster, index} <- @boosters do %>
-  <div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#booster<%= index %>">Booster <%= index + 1%></a>
-      </h4>
+
+<%= if Enum.any?(@boosters) do %>
+  <%= for {booster, index} <- @boosters do %>
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#booster<%= index %>">Booster <%= index + 1%></a>
+          </h4>
+        </div>
+        <div id="booster<%= index %>" class="panel-collapse collapse">
+          <ul class="list-group">
+            <%= for card <- booster do %>
+              <li class="list-group-item">
+                <%= render_card(card) %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div id="booster<%= index %>" class="panel-collapse collapse">
-      <ul class="list-group">
-        <%= for card <- booster do %>
-          <li class="list-group-item">
-            <%= render_card(card) %>
-          </li>
-        <% end %>
-      </ul>
+  <% end %>
+<%= else %>
+  <p>
+    <div class="alert alert-danger">
+      Could not generate boosters. Please add more cards to your pool and try again.
     </div>
-  </div>
-</div>
+  </p>
 <% end %>
 
 <h2>Your pool</h2>
+<p>
 This is a list of all your cards and their determined rarity. Only cards with rarity <i>Common</i>, <i>Uncommon</i>, <i>Rare</i> or <i>Mythic Rare</i> were considered in the boosters above.
+</p>
 <ul>
   <%= for card <- @cards do %>
     <li>
