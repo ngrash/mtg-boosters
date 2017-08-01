@@ -24,7 +24,7 @@ defmodule MagicLimiterWeb.PageController do
         cards_by_rarity = Booster.count_rarity(known_cards)
         max_possible_boosters = Booster.max_possible_boosters(cards_by_rarity)
 
-        count = case max_possible_boosters > desired_booster_count do
+        count = case max_possible_boosters >= desired_booster_count do
           true  -> desired_booster_count
           false ->
 
