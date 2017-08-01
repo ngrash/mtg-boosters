@@ -6,10 +6,11 @@ defmodule MagicLimiter.Cards.Card do
   @primary_key {:id, :string, []}
 
   schema "cards" do
-    field :set, :string
     field :name, :string
     field :names, {:array, :string}
+    field :number, :string
     field :rarity, :string
+    belongs_to :set, MagicLimiter.Cards.Set
 
     timestamps()
   end
@@ -17,8 +18,8 @@ defmodule MagicLimiter.Cards.Card do
   @doc false
   def changeset(%Card{} = card, attrs) do
     card
-    |> cast(attrs, [:id, :set, :name, :names, :rarity])
+    |> cast(attrs, [:id, :set_id, :name, :names, :number, :rarity])
     |> unique_constraint(:id, name: :cards_pkey)
-    |> validate_required([:set, :name, :rarity])
+    |> validate_required([:set_id, :name, :rarity])
   end
 end

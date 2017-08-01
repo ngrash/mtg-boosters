@@ -25,7 +25,7 @@ defmodule MagicLimiter.Cards do
     query = from c in Card,
             where: c.name == ^name,
             limit: 1
-    Repo.one(query)
+    Repo.one(query) |> Repo.preload(:set)
   end
 
   @doc """
