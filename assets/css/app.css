@@ -7,3 +7,8 @@ textarea {
 input {
   width: 100%;
 }
+
+.list-group {
+  margin-top: 0;
+}
+

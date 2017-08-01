@@ -28,13 +28,13 @@ defmodule MagicLimiterWeb.PageController do
           true  -> desired_booster_count
           false ->
 
-            conn = put_flash(conn, :warning, "You asked for #{desired_booster_count} boosters but you card pool only allows for #{max_possible_boosters}")
+            conn = put_flash(conn, :warning, "You asked for #{desired_booster_count} boosters but you card pool only allows for #{max_possible_boosters}.")
             max_possible_boosters
         end
 
         boosters = Booster.build(known_cards, count)
 
-        render conn, "pool.html", cards: find_cards(pool), boosters: boosters
+        render conn, "pool.html", cards: find_cards(pool), boosters: Enum.with_index(boosters)
       {:error, :pool_empty} ->
         conn
         |> put_flash(:error, "Please enter your pool below")

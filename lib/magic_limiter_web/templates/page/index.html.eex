@@ -1,4 +1,6 @@
-Questions? <a href="<%= page_path(@conn, :faq) %>">Answers!</a>
+<p>
+  Questions? <a href="<%= page_path(@conn, :faq) %>">Answers!</a>
+</p>
 
 <%= form_for @conn, page_path(@conn, :index), [as: :pool_params], fn form -> %>
   <div class="form-group">
