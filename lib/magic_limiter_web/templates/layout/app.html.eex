@@ -20,7 +20,9 @@
             <li><a href="<%= page_path(@conn, :faq) %>">FAQ</a></li>
           </ul>
         </nav>
-        <span class="logo"></span>
+        <a href="<%= page_path(@conn, :index) %>">
+          <span class="logo"></span>
+        </a>
 
         <h1>Limited Booster Generator</h1>
       </header>
