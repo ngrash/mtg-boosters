@@ -56,5 +56,5 @@ Of course! If you love or hate what I do or have something else to say, you can
   document.write("<a href='mailto:"+link+"' class='fa-envelope-o'>drop me an email</a>")
 }
 //-->
-</script><noscript>Sorry, you need Javascript on to email me.</noscript>.
+</script><noscript>Sorry, you need Javascript on to email me.</noscript> or find me on <a href="https://twitter.com/nicograshoff">Twitter</a>.
 </p>
