@@ -16,6 +16,6 @@ defmodule MagicLimiterWeb.PageView do
   end
 
   defp card_link(%Card{name: name, rarity: rarity, number: number, set: %{magicCardsInfoCode: code}}) do
-    "<a href=\"http://magiccards.info/#{code}/en/#{number}.html\">#{name} (#{rarity})</a>"
+    "<a target=\"_blank\" href=\"http://magiccards.info/#{code}/en/#{number}.html\">#{name} (#{rarity})</a>"
   end
 end
