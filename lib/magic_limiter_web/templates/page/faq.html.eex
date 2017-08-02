@@ -2,13 +2,7 @@
 
 <h3>What is this?</h3>
 <p>
-The <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> generates a number of booster for limited formats, such as:
-
-<ul>
-  <li><a href="http://magic.wizards.com/en/game-info/gameplay/formats/sealed-deck">Sealed</a></li>
-  <li><a href="http://magic.wizards.com/en/game-info/gameplay/formats/booster-draft">Booster Draft</a></li>
-  <li><a href="http://magic.wizards.com/en/articles/archive/how-build/building-your-first-cube-2016-05-19">Cube Draft</a></li>
-</ul>
+The <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> generates a number of booster for limited formats, such as <a href="http://magic.wizards.com/en/game-info/gameplay/formats/sealed-deck">Sealed</a> or <a href="http://magic.wizards.com/en/game-info/gameplay/formats/booster-draft">Booster Draft</a>.
 </p>
 
 <h3>Where is the generator?</h3>
@@ -25,7 +19,7 @@ There are also mobile apps such as <a href="https://itunes.apple.com/de/app/scry
 
 <h3>Why did you build this?</h3>
 <p>
-Limited formats are fun. However, I don't want to buy a fresh pack of boosters everytime I want to draft with my friends. <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> offers a way to build boosters from the cards I already own.
+Limited formats are fun. However, I don't want to buy a fresh pack of boosters everytime I want to draft with my friends. <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> offers a way to build boosters from the cards you already own.
 </p>
 
 <h3>How does it work?</h3>
