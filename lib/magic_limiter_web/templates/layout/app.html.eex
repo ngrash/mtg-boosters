@@ -35,6 +35,15 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
+    <footer>
+      <hr />
+      <small>
+        <p>Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2009 Wizards. All Rights Reserved.</p>
+        <p>
+          This web site is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. This web site may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards' <a href="http://magic.wizards.com/en/content/kaladesh-fan-kit">Fan Site Policy</a>. For example, MAGIC: THE GATHERING® is a trademark of Wizards of the Coast. For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property, please visit their website at <a href="archive.wizards.com">archive.wizards.com</a>.</small>
+      </p>
+    </footer>
+
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

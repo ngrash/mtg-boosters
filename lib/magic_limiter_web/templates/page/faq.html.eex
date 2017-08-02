@@ -1,6 +1,7 @@
 <h2>Frequently Asked Questions</h2>
 
 <h3>What is this?</h3>
+<p>
 The <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> generates a number of booster for limited formats, such as:
 
 <ul>
@@ -8,29 +9,35 @@ The <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> gene
   <li><a href="http://magic.wizards.com/en/game-info/gameplay/formats/booster-draft">Booster Draft</a></li>
   <li><a href="http://magic.wizards.com/en/articles/archive/how-build/building-your-first-cube-2016-05-19">Cube Draft</a></li>
 </ul>
+</p>
 
 <h3>Where is the generator?</h3>
-
+<p>
 It is <a href="<%= page_path(@conn, :index) %>">right here</a>.
+</p>
 
 <h3>Do you expect me to type in all my cards by hand?</h3>
-
+<p>
 No. <a href="https://deckbox.org">Deckbox</a> offers an <i>Export to Text</i> feature that produces compatible lists.
 
 There are also mobile apps such as <a href="https://itunes.apple.com/de/app/scryglass-magic-card-scanner/id1139485613">ScryGlass (for iOS)</a> that you can use to catalogue your cards.
+</p>
 
 <h3>Why did you build this?</h3>
-
+<p>
 Limited formats are fun. However, I don't want to buy a fresh pack of boosters everytime I want to draft with my friends. <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> offers a way to build boosters from the cards I already own.
+</p>
 
 <h3>How does it work?</h3>
-
+<p>
 The generator checks the rarity of each of your cards. It then takes 14 random cards for each booster. Each booster contains 10 commons, 3 uncommons and 1 rare (replaced by a mythic in about 1 in 8 boosters if available).
 <br />
+</p>
 
 Rarity is determined by looking up the card name (english only) in a database based on <a href="https://mtgjson.com">MTG JSON</a>.
 
 <h3>Can I contact you?</h3>
+<p>
 Of course! If you love or hate what I do or have something else to say, you can
 <script type="text/javascript" language="javascript">
 <!--
@@ -56,3 +63,4 @@ Of course! If you love or hate what I do or have something else to say, you can
 }
 //-->
 </script><noscript>Sorry, you need Javascript on to email me.</noscript>.
+</p>
