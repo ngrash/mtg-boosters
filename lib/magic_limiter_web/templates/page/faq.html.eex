@@ -2,7 +2,7 @@
 
 <h3>What is this?</h3>
 <p>
-The <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> generates a number of booster for limited formats, such as <a href="http://magic.wizards.com/en/game-info/gameplay/formats/sealed-deck">Sealed</a> or <a href="http://magic.wizards.com/en/game-info/gameplay/formats/booster-draft">Booster Draft</a>.
+The <a href="<%= page_path(@conn, :index) %>">Limited Booster Generator</a> generates a number of booster for limited Magic the Gathering® formats, such as <a href="http://magic.wizards.com/en/game-info/gameplay/formats/sealed-deck">Sealed</a> or <a href="http://magic.wizards.com/en/game-info/gameplay/formats/booster-draft">Booster Draft</a>.
 </p>
 
 <h3>Where is the generator?</h3>
