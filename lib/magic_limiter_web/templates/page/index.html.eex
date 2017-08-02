@@ -20,7 +20,7 @@
   function getText(){
     // read text from URL location
     var request = new XMLHttpRequest();
-    request.open('GET', 'examplelist.txt', true);
+    request.open('GET', '<%= static_path(@conn, "/examplelist.txt") %>', true);
     request.send(null);
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
